@@ -23,7 +23,8 @@ def scrap(quantity, domain):
         chrome_options.add_argument("--disable-software-rasterizer")  # Disable software rasterizer
 
 
-        service = ChromeService(ChromeDriverManager().install())
+        # service = ChromeService(ChromeDriverManager().install())
+        service = ChromeService("/usr/bin/chromedriver")
         driver = webdriver.Chrome(service=service, options=chrome_options)
 
         try:

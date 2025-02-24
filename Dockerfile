@@ -5,6 +5,10 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Set Chrome and ChromeDriver environment variables
+ENV CHROME_BIN=/usr/bin/google-chrome
+ENV CHROMEDRIVER_BIN=/usr/local/bin/chromedriver
+
 # Set the working directory
 WORKDIR /app
 
@@ -30,7 +34,8 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearm
     rm -rf /var/lib/apt/lists/*
 
 # Install ChromeDriver (match Chrome version)
-RUN CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE) && \
+RUN CHROME_VERSION=$(google-chrome --version | grep -oP '[0-9.]+' | head -1) && \
+    CHROME_DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*}) && \
     wget -q https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip && \
     unzip chromedriver_linux64.zip -d /usr/local/bin/ && \
     chmod +x /usr/local/bin/chromedriver && \
@@ -45,5 +50,5 @@ COPY . .
 # Expose the port your app runs on
 EXPOSE 10000
 
-# Start the Flask app with Gunicorn
+# Start the FastAPI app with Gunicorn
 CMD ["gunicorn", "-b", "0.0.0.0:10000", "app:app"]
