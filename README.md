@@ -122,6 +122,7 @@ This pipeline automates the entire process from extraction to publication, signi
 
 ## Contributors
 
-* [Your Name]
-* [Collaborator Name]
-* [Collaborator Name]
+* Vednat Raulkar
+* Pranav Sonar
+* Rohan Kale
+* Jignesh Patil
