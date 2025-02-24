@@ -10,11 +10,11 @@ COPY . .
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y wget && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-	apt install -y ./google-chrome-stable_current_amd64.deb && \
-	rm google-chrome-stable_current_amd64.deb && \
-	apt-get clean
+    apt-get install -y ./google-chrome-stable_current_amd64.deb && \
+    rm google-chrome-stable_current_amd64.deb && \
+    apt-get clean
 
 EXPOSE 10000
 
