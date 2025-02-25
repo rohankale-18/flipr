@@ -42,7 +42,7 @@ This pipeline automates the entire process from extraction to publication, signi
 1.  **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/rohankale-18/flipr[https://github.com/rohankale-18/flipr]
+    git clone https://github.com/rohankale-18/flipr
     cd flipr
     ```
 
