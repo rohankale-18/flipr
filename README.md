@@ -3,7 +3,7 @@
 This project was developed for a hackathon, aiming to automate and enhance news content creation and delivery. We built a comprehensive pipeline that:
 
 1.  **Scrapes news articles** from IndiaTVNews using Selenium.
-2.  **Generates SEO tags and summaries** using an AI model.
+2.  **Generates SEO tags and summaries** using an Deepseek V3.
 3.  **Creates engaging images** using Pollinations AI.
 4.  **Deploys the scraper as a Flask API.**
 5.  **Integrates the API with a WordPress website.**
@@ -31,20 +31,19 @@ This pipeline automates the entire process from extraction to publication, signi
 * **Selenium:** For dynamic web scraping.
 * **Flask:** For creating the API.
 * **Pollinations AI:** For image generation.
-* **AI Model (Specify Model if Possible):** For SEO tag and summary generation.
-* **Database (Specify Database):** For data storage (e.g., PostgreSQL, MySQL, SQLite).
+* **AI Model (Deepseek V3):** For SEO tag and summary generation.
+* **Database (Wordpress CMS):** For data storage.
 * **WordPress:** For website integration.
 * **Requests (Python Library):** For making HTTP requests.
-* **Deployment Platform (Specify Platform):** For deploying the Flask API and WordPress website (e.g., Heroku, AWS, DigitalOcean).
-* **Scheduling Tool (Specify Tool):** For scheduling news updates (e.g., cron jobs, Celery).
+* **Deployment Platform (Wordpress):** For deploying the WordPress website.
 
 ## Setup Instructions
 
 1.  **Clone the Repository:**
 
     ```bash
-    git clone [repository URL]
-    cd [repository directory]
+    git clone https://github.com/rohankale-18/flipr[https://github.com/rohankale-18/flipr]
+    cd flipr
     ```
 
 2.  **Create a Virtual Environment (Recommended):**
@@ -98,7 +97,14 @@ This pipeline automates the entire process from extraction to publication, signi
 
 ## Project Structure
 
-├── app.py # Flask API application ├── scraper.py # Web scraping logic (using Selenium) ├── ai_optimization.py # AI model for SEO and summary ├── image_generator.py # Pollinations AI integration ├── database.py # Database interaction logic ├── requirements.txt # Python dependencies ├── README.md # Project documentation └── ... # Other files
+├── app.py # Flask API application 
+├── scraper.py # Web scraping logic (using Selenium) 
+├── ai_optimization.py # AI model for SEO and summary 
+├── image_generator.py # Pollinations AI integration 
+├── database.py # Database interaction logic 
+├── requirements.txt # Python dependencies 
+├── README.md # Project documentation 
+└── ... # Other files
 
 ## Usage
 
@@ -118,11 +124,10 @@ This pipeline automates the entire process from extraction to publication, signi
 * **Scalability:** Optimize the application for scalability and performance.
 * **Add more news sources:** Add functionality to scrape from more news sources.
 * **Improve scheduling:** Add a better scheduling system with a UI.
-* **Headless Browser:** Implement headless browser functionality in selenium.
 
 ## Contributors
 
-* Vednat Raulkar
+* Vedant Raulkar
 * Pranav Sonar
 * Rohan Kale
 * Jignesh Patil
